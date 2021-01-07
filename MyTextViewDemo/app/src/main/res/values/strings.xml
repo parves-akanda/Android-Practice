@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">MyTextView</string>
+    
+    <string name="nametext"> Abstract. Lemmatization is a process of finding the base
+morphological form (lemma) of a word. It is an important
+step in many natural language processing, information
+retrieval, and information extraction tasks, among others.
+We present an open-source language-independent
+lemmatizer based on the Random Forest classification
+model. This model is a supervised machine-learning
+algorithm with decision trees that are constructed
+corresponding to the grammatical features of the
+language. This lemmatizer does not require any manual
+work for hard-coding of the rules, and at the same
+time it is simple and interpretable. We compare
+the performance of our lemmatizer with that of the
+UDPipe lemmatizer on twenty-two out of twenty-five
+languages we work on for which UDPipe has models.
+Our lemmatization method shows good performance on
+different languages from various language groups, and it
+is easily extensible to other languages. The source code
+of our lemmatizer is publicly available.
+Keywords. Lemmatization, natural language processing, text preprocessing, Random Forest classifier,
+Decision Tree classifier.
+1 Introduction
+Lemmatization is an important data preparation
+step in many Natural language Processing (NLP)
+tasks such as Information Extraction (IE) and
+Information Retrieval (IR), among others. The aim
+of lemmatization is to determine the base form of a
+word (lemma) [11].
+A number of approaches have been developed for lemmatization, ranging from those
+relying on rule-based techniques [19] and simple
+statistical-based methods [39] to the modern
+deep-learning methods: see, for example, the
+Stanford CoreNLP [27], a neural lemmatizer for
+Bengali [8] and for German, Czech and Arabic [24].
+In our work, lemmatization is treated by building
+tree classification models [14], i.e., by supervised
+machine learning with decision trees that are
+constructed corresponding to the grammatical
+features of the language.
+Researchers have faced with difficulties while
+lemmatizing words by different approaches. The
+main difficulty of a rule-based word lemmatization
+is that it is challenging to adjust existing rules to
+new classification tasks [32]. When social media
+texts are processed, it can be impractical to collect
+a predefined dictionary due to the fact that the
+language variation is high [22].
+Concerning low-resource languages, it is hard to
+collect corpora and compile dictionaries for such
+languages [23]. Part-of-Speech (POS)-tagging, as
+one of the preliminary steps of lemmatization, is
+also difficult because some languages have up to
+Computación y Sistemas, Vol. 24, No. 3, 2020, pp. 1353–1364
+doi: 10.13053/CyS-24-3-3775
+ISSN 2007-9737
+30 different word forms for the same normalized
+words [32].
+Our method is a direct supervised approach
+of building word lemma classification. Our
+approach estimates the possibility of computing
+syntactic models using only datasets in the form
+of wordform–lemma dictionaries. We present
+an open-source1 multilingual Random Forest
+Classifier-based lemmatizer that has been shown
+to support twenty-five languages. This lemmatizer
+is a continuation of our previous work [1], where
+we used Decision Tree Regression method. That
+model caused a character shift errors leading
+to poor accuracy; this does not happen in
+the lemmatizer presented in this paper because
+of using a classification algorithm instead of
+regression.
+We compare our lemmatizer with UDPipe,
+an open-source tool for lemmatization.2 Our
+evaluation shows that our classification tree-based
+lemmatizer achieves much better results than
+UDPipe does when our algorithm is provided with
+sufficient amount of training data.
+This paper is organized as follows. We
+begin from a brief review of related works on
+lemmatization in Section 2. In Section 3,
+we describe a dataset, explain the method of
+generating vectors from the words in the dataset
+based on character co-occurrence matrix and
+TF-IDF vectorizer [31], present our approach
+based on Decision Tree and Random Forest
+Classifiers and give the steps of our lemmatization
+algorithm. In Section 4, we present the obtained
+results. Section 5 concludes the paper and outlises
+future extensions and possible research directions.
+2 Related Work
+To identify papers related with the present
+research, we have searched Google Scholar and
+Semantic Scholar. Our query terms included
+language-independent word lemmatization, neural
+architectures for lemmatization, and machine
+1The source code of our lemmatizer is publicly available on
+https://github.com/iskander-akhmetov/HighlyLanguage-Independent-Word-Lemmatization-Using-aMachine-Learning-Classifier.
+2http://ufal.mff.cuni.cz/udpipe
+learning for lemmatization, among others. We
+arranged the resulting papers from each query by
+citation count and took at least top three. We
+considering a paper only if it introduced original
+ideas of a method or an algorithm.
+2.1 Rule-based Approaches
+Conventional algorithms for text lemmatization are
+based on rules. It is worth mention that rules can
+be expressed by the apparatus of fuzzy [13] or
+predicate [37] logic. The logical rules applied to
+finite-state transducers, with the help of a lexicon,
+define morphotactic and orthographic alternations.
+As a result, a system based on such rules
+can solve several tasks, such as stemming,
+lemmatization, and full morphological analysis [2,
+10]. The advantages of such an approach include
+transparency of the algorithm’s outcome and the
+possibility of fine-tuning.
+However, there are also disadvantages, such as
+the so-called problem of out-of-vocabulary (OOV)
+words, that leads to the need of intensive manual
+support for the vocabulary of many thousands
+of words.
+In addition, there exist approaches that automatically generate rules from the dataset of pairs of
+the word and its normal form. For instance, [25]
+with the help of a decision tree predicted particular
+letters of the transformed word based on the letters
+in the form of the past tense.
+Another approach relies on relational learning
+with decision lists applied to English verbs in the
+past tense [30].
+2.2 Statistical Approaches
+Various approaches to NLP have been influenced
+by ideas from statistics methods, such as Hidden
+Markov Model (HMM) and Conditional Random
+Fields (CRF), among others.
+Researchers adopted HMM for POS tagging
+and approximation of language model for speech
+recognition systems. These methods have
+difficulties in estimating transitional probabilities on
+a small amount of data.
+Besides, for good accuracy performance of
+such methods, there is a need for the large
+ </string>
+</resources>

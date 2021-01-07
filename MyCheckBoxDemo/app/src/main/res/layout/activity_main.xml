@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#30b788"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:text="@string/title_text"
+        android:layout_width="wrap_content"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/milkBoxId"
+        android:text="@string/milk_text"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/sugerBoxId"
+        android:text="@string/suger_text"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/waterBoxId"
+        android:text="@string/water_text"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/honeyBoxId"
+        android:text="@string/honey_text"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/buttonId"
+        android:text="@string/button_text"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textStyle="italic"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
