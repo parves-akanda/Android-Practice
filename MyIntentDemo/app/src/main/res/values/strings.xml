@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyIntentDemo</string>
+    <string name="button_text">Go to second Activity</string>
+    <string name="textView_text">Welcome to Second Activity</string>
+</resources>
